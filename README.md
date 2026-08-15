@@ -4,14 +4,21 @@
 # Wave Race 64
 A early decompilation of a game with many waves!
 
-This repository is a continuation of the original decompilation by [LLONSIT](https://github.com/LLONSIT/Wave-Race-64), whose work this project is built on. Credit for the original tooling, structure, and decompilation effort goes to the project's contributors:
+<!-- CREDITORS:BEGIN -->
+## Credits
 
-- [LLONSIT](https://github.com/LLONSIT)
-- [theboy181](https://github.com/theboy181)
-- [gcsmith](https://github.com/gcsmith)
-- [llonsit1](https://github.com/llonsit1)
-- [Ryan-Myers](https://github.com/Ryan-Myers)
-- [Siiiimon](https://github.com/Siiiimon)
+This repository is a continuation of the original decompilation by [LLONSIT](https://github.com/LLONSIT/Wave-Race-64), whose work this project is built on. Credit for the original tooling, structure, and decompilation effort goes to the project's contributors (list generated on 2026-08-15):
+
+- [LLONSIT](https://github.com/LLONSIT) (230 contributions)
+- [theboy181](https://github.com/theboy181) (76 contributions)
+- [gcsmith](https://github.com/gcsmith) (7 contributions)
+- [llonsit1](https://github.com/llonsit1) (4 contributions)
+- [Ryan-Myers](https://github.com/Ryan-Myers) (2 contributions)
+- [Siiiimon](https://github.com/Siiiimon) (2 contributions)
+
+Run `python3 tools/update_credits.py` to refresh this list from GitHub.
+
+<!-- CREDITORS:END -->
 
 # Progress (Static) 
 - Game Code
