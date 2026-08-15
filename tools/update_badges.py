@@ -27,7 +27,7 @@ def main():
     # Your total function count (from your badge goal)
     total_rom = 1365
     # Your converted functions (from your records)
-    converted = 889
+    converted = d[measures][matched_functions]
 
     # Compute overall progress percentage
     overall_pct = round(converted / total_rom * 100, 2)
