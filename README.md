@@ -24,7 +24,7 @@ Run `python3 tools/update_credits.py` to refresh this list from GitHub.
 - Game Code
 <p align="left">
     <a href="" alt="WR64_Total_Functions">
-        <img src="https://img.shields.io/badge/Functions%20889%2F1365-65.71%25-blue" /></a>
+        <img src="https://img.shields.io/badge/ROM%20Match-100%25-brightgreen" /></a>
 </p>
 
 - Assets
