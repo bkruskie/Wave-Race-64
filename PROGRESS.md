@@ -167,7 +167,7 @@ These files contain functions with `(void)arg;` pattern — stubs that need real
 ## What Remains
 
 ### Phase 1: Score ALL functions
-Run `tools/score2.sh` on every function to get opcode ratios.
+Run `work/tools/score2.sh` on every function to get opcode ratios.
 
 ### Phase 2: Fix non-FULL functions
 - OPCODE (>=0.90): Fix register allocation / scheduling
