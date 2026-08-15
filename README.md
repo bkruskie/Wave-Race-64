@@ -4,7 +4,14 @@
 # Wave Race 64
 A early decompilation of a game with many waves!
 
-This repository is a continuation of the original decompilation by [LLONSIT](https://github.com/LLONSIT/Wave-Race-64), whose work this project is built on. All credit for the original tooling, structure, and decompilation effort goes to him.
+This repository is a continuation of the original decompilation by [LLONSIT](https://github.com/LLONSIT/Wave-Race-64), whose work this project is built on. Credit for the original tooling, structure, and decompilation effort goes to the project's contributors:
+
+- [LLONSIT](https://github.com/LLONSIT)
+- [theboy181](https://github.com/theboy181)
+- [gcsmith](https://github.com/gcsmith)
+- [llonsit1](https://github.com/llonsit1)
+- [Ryan-Myers](https://github.com/Ryan-Myers)
+- [Siiiimon](https://github.com/Siiiimon)
 
 # Progress (Static) 
 - Game Code
