@@ -1,0 +1,167 @@
+
+//Game Symbols
+gCurrentGfxTask  = 0x801542B4;
+gCurrentAudioTask = 0x801542B8;
+gDisplayListHead = 0x80151944;
+unk_game_load = 0x80095050;
+main_thread = 0x80047530;
+gDramStack = 0x80046400;
+gTaskOutputBuffer = 0x800EEDD0;
+gGfxPool = 0x801518B8;
+gOSYieldData = 0x80045800;
+SysMain_Thread = 0x80046DA0;
+sGfxTask = 0x80151940;
+gPrevGameState = 0x801CE634;
+gBuoyMisses = 0x800D8174;
+
+//game_23E0
+SysUtils_Srand = 0x80047E44;
+SysUtils_Rand = 0x80047E50;
+SysUtils_MtxToMtxF = 0x80047E78;
+SysUtils_MtxFToMtx = 0x80047EE0;
+SysUtils_LightsSetAmbient = 0x80047F48;
+SysUtils_LightsSetColor = 0x80047F64;
+SysUtils_LightsSetDirection = 0x80047F80;
+SysUtils_LightsSetSource = 0x80047F90;
+SysUtils_MatrixAffineMultiply = 0x80049EB8;
+SysUtils_UpdateControllers = 0x8004A2B4;
+SysUtils_ContInitialize = 0x8004A130;
+SysUtils_MatrixLookAt = 0x80048854;
+SysUtils_InterpolateMtx = 0x80049144;
+SysUtils_NormalizeVertexTri = 0x80048E0C;
+
+//R_G_B_A
+gColorRed   = 0x800D47E8;
+gColorGreen = 0x800D47EC;
+gColorBlue  = 0x800D47F0;
+gColorAlpha = 0x800D47F4;
+
+//not a very good name
+configSignalRectangle = 0x8006E024;
+// fast3d_800D22B0 = 0x800D22B0;
+AudioThread_QueueCmdS8 = 0x800C53D4;
+gCourseID = 0x800D8170;
+menu_buffer_1 = 0x80228930;
+short_RGB = 0x800DAA58;
+bootproc = 0x80047AA4;
+gControllers = 0x801542F0;
+gControllerOne = 0x80154308;
+gCameraPerspective = 0x80227C80;
+gPlayers = 0x800DAB28;
+gRiders = 0x801982F0;
+gRiderGameModes = 0x801CE648;
+gDifficulty = 0x801CB338;
+gGameModes = 0x801CE620;
+Mio0_Decompress = 0x800B4D30;
+osTvType = 0x80000300;
+Main_IdleThread = 0x8004791C;
+gIdleThread = 0x801539E0;
+game_dma_copy = 0x80097EC8; //defined:true
+SysMain_GfxFullSync = 0x80046BF4;
+SysMain_SendGfxTaskSetMesg = 0x80046CF8;
+SysMain_GfxInitBuffers = 0x80046D2C;
+gGameState = 0x800DAB24;
+Draw_WaterEffects = 0x80090F58;
+UnusedPrintFontDL = 0x10144F8;
+//Fix build
+D_80228A78 = 0x80228A78;
+D_80227E98 = 0x80227E98;
+D_80228058 = 0x80228058;
+
+
+//Names from n64decomp/mk64
+AudioLoad_Init = 0x800BA100;
+gSinTable = 0x80154350;
+gAudioThread = 0x80153D40;
+jtbl_800E9B70 = 0x800E9B70; //size:128 type:jtbl
+
+codeseg_ROM_START = 0xA95D0; //defined:true
+codeseg_ROM_END = 0xF6090; //defined:true
+GameLoad_LoadOverlay = 0x80098208;
+gOverlayTable = 0x800E4ED0;
+
+Libc_strncpy = 0x8006A140;
+Libc_strcmp = 0x8006A188;
+Libc_strncmp = 0x8006A1CC;
+GameLoad_LoadCodeseg = 0x80098190;
+SysUtils_TaylorSeries = 0x80047C38;
+AudioSynth_ProcessNote = 0x800B5E70;
+Math_Normalize_VectorComponents = 0x80088B84;
+Math_Fabs = 0x800984D0;
+Math_Vec3f_Set = 0x800984F4;
+Math_Vec3f_Initialize = 0x80098514;
+Math_Vec3f_Copy = 0x8009852C;
+Math_Vec3f_Substract = 0x80098E3C;
+Math_Normalize_Angle = 0x8009D4F0;
+_MtxF_to_Mtx = 0x801EDD90;
+D_800D47FC = 0x800D47FC; // ignore:true
+func_i3_802C5800 = 0x802C5800; //size:0x2E8 segment:ovl_i3
+
+sFadeTransitionDefaultProps = 0x80226CC0;
+sCurrentFadeTransitionProps = 0x80228A10;
+gCurrentOptionsMenuItem = 0x800DA9D4;
+SysUtils_Round = 0x80047BE0;
+sRandSeed = 0x80226F00;
+Math_srand = 0x801ED2E0;
+Math_Rand = 0x801ED304;
+SysMain_CreateGfxTask = 0x80046C30;
+gWaterLevel = 0x80192458;
+SegmentedToVirtual = 0x80094088;
+gCurrentPauseMenuOption = 0x801CE624;
+gGameModeState = 0x801CE650;
+Strlen2 = 0x800941D0;
+Save_PfsIsPlug = 0x8007D110;
+Save_PfsDeleteFile = 0x8007DB40;
+Save_PfsFindFile = 0x8007D1B8;
+Save_PfsCheckFree = 0x8007D24C;
+Save_GenCheckSum = 0x8007BBF8;
+gFrameBuffers = 0x801542C0;
+gFramebuffersIdx = 0x80151948;
+gFrameCounter = 0x80151960;
+gMainThreadMesgQueue = 0x80154130;
+gAudioTaskMesgQueue = 0x801540E8;
+sAudioTaskMsg = 0x801542D0;
+
+D_80198350 = 0x80198350;
+D_801CE61C = 0x801CE61C;
+D_801CE65A = 0x801CE65A;
+D_801C3A10 = 0x801C3A10;
+D_80198310 = 0x80198310;
+D_801CE692 = 0x801CE692;
+
+D_800452F8 = 0x800452F8; //defined:true
+D_8003FE64 = 0x8003FE64; //defined:true
+D_8003FF48 = 0x8003FF48; //defined:true
+D_80038220 = 0x80038220; //defined:true
+D_8003FF4F = 0x8003FF4F; //defined:true 
+D_8003FCCF = 0x8003FCCF; //defined:true
+
+D_800D4A3D = 0x800D4A3D; //defined:true
+D_800D4A3E = 0x800D4A3E; //defined:true
+D_800D4A3F = 0x800D4A3F; //defined:true
+D_800D826A = 0x800D826A; //defined:true
+D_800DA950 = 0x800DA950; //defined:true size:0x38
+D_800DA9B0 = 0x800DA9B0; //defined:true size:0x10
+D_800DA9C8 = 0x800DA9C8; //defined:true
+D_800DA9D0 = 0x800DA9D0; //defined:true
+D_800DA9D8 = 0x800DA9D8; //defined:true
+D_800DA9EC = 0x800DA9EC; //defined:true size:0xC
+D_800DA9FC = 0x800DA9FC; //defined:true
+D_800DAA04 = 0x800DAA04; //defined:true
+D_800DAA08 = 0x800DAA08; //defined:true
+D_800DAA10 = 0x800DAA10; //defined:true
+D_800DAA34 = 0x800DAA34; //defined:true
+D_800DAAB4 = 0x800DAAB4; //defined:true
+D_800DAAD8 = 0x800DAAD8; //defined:true size:0x24
+D_800DAB6C = 0x800DAB6C; //defined:true
+D_800DB58C = 0x800DB58C; //defined:true
+D_800E7F75 = 0x800E7F75; //defined:true
+D_800EABB0 = 0x800EABB0; //defined:true size:0xC
+D_800EABBC = 0x800EABBC; //defined:true
+D_800EAC14 = 0x800EAC14; //defined:true
+D_800EAC44 = 0x800EAC44; //defined:true
+D_800EDC6A = 0x800EDC6A; //defined:true
+D_80151BE0 = 0x80151BE0; //defined:true
+D_801CE626 = 0x801CE626; //defined:true
+D_801FC840 = 0x801FC840; //defined:true
+
