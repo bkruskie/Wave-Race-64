@@ -166,11 +166,10 @@ s32 func_800741A4(f32 arg0, f32 arg1) {
     return result;
 }
 
-void func_800744EC(void) {
     // func_800744EC ASM-to-C conversion skeleton
     // Based on ASM: large function (0xD88 bytes), complex FP ops and table lookups
     // Full implementation requires reverse-engineering 973 lines of ASM
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_2C670/func_800744EC.s")
 
 s32 func_80074264(f32 arg0, f32 arg1) {
     s32 i;

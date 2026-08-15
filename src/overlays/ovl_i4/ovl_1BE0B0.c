@@ -16,29 +16,19 @@ void func_i4_802C5800(void) {
     func_80069798(D_801CE5F8 + 0xA80, D_801CE5F8 + 0x1780, D_801CE5F8 + 0xA40, &D_802C76AC, &D_80198310, &D_80198350);
 }
 
-void func_i4_802C58F8(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i4/ovl_1BE0B0/func_i4_802C58F8.s")
 
-void func_i4_802C5CDC(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i4/ovl_1BE0B0/func_i4_802C5CDC.s")
 
-void func_i4_802C6778(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i4/ovl_1BE0B0/func_i4_802C6778.s")
 
-void func_i4_802C69C4(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i4/ovl_1BE0B0/func_i4_802C69C4.s")
 
-void func_i4_802C6C2C(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i4/ovl_1BE0B0/func_i4_802C6C2C.s")
 
-void func_i4_802C6ED0(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i4/ovl_1BE0B0/func_i4_802C6ED0.s")
 
-void func_i4_802C70C0(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i4/ovl_1BE0B0/func_i4_802C70C0.s")
 
 void func_i4_802C7344(void) {
     if (D_801CE65A[D_802C76B0].unk0 & (A_BUTTON | Z_TRIG | START_BUTTON)) {

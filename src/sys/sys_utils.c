@@ -656,12 +656,9 @@ s32 func_800498A4(f32 arg0) {
     return SysUtils_Round(arg0);
 }
 
-void func_80049A94(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/sys/sys_utils/func_80049A94.s")
 
-void func_80049C9C(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/sys/sys_utils/func_80049C9C.s")
 
 #pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/sys/sys_utils/func_8004A3C0.s")
 
@@ -770,10 +767,4 @@ UNUSED void SysUtils_ReadContData(void) {
     SysUtils_UpdateControllers();
 }
 
-void func_8004A3C0(s32 arg0) {
-    (void)arg0;
-}
-
-void func_8004A8B0(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/sys/sys_utils/func_8004A8B0.s")

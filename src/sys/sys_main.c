@@ -3,9 +3,6 @@
 
 extern void game_dma_copy(uintptr_t devAddr, void* vAddr, u32 nbytes);
 
-void unk_game_load(void) {
-}
-
 void func_80046850(void) {
     s32 prevValue = D_8015194C;
 

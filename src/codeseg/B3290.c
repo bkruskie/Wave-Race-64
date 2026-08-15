@@ -1,9 +1,5 @@
 #include "common.h"
 
-void func_801E4C60(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/codeseg/B3290/func_801E4C60.s")
 
-void func_801E4FE8(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/codeseg/B3290/func_801E4FE8.s")

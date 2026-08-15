@@ -45,17 +45,11 @@ void func_801FAEB0(s32 arg0) {
 void func_801FB488(s32 arg0, s32 arg1, s32 arg2) {
 }
 
-void func_801FAEB8(Gfx** arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/codeseg/C94E0/func_801FAEB8.s")
 
-void func_801FB514(Gfx** arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/codeseg/C94E0/func_801FB514.s")
 
-void func_801FBFB4(Gfx** arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/codeseg/C94E0/func_801FBFB4.s")
 
 void func_801FC39C(void) {
     Players player;

@@ -51,76 +51,35 @@ void func_i1_802C5900(void) {
     }
 }
 
-void func_i1_802C59E8(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C59E8.s")
 
-void func_i1_802C5AE4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C5AE4.s")
 
-void func_i1_802C5DF4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C5DF4.s")
 
-void func_i1_802C63B4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C63B4.s")
 
-void func_i1_802C6550(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C6550.s")
 
-void func_i1_802C6B38(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C6B00.s")
 
-void func_i1_802C6BD8(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C6B38.s")
 
-void func_i1_802C6DCC(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C6BD8.s")
 
-void func_i1_802C6FE0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C6DCC.s")
 
-void func_i1_802C7608(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C6FE0.s")
 
-void func_i1_802C7D00(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C7394.s")
 
-void func_i1_802C7E48(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C7570.s")
+
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C7608.s")
+
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C7D00.s")
+
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i1/ovl_1B55A0/func_i1_802C7E48.s")
 
 void func_i1_802C8E70(void) {
     s32 pad;

@@ -134,8 +134,7 @@ void func_8007DBC0(void); /* extern */
 void func_800B49C4(void);
 void func_8006E0F4(void);
 
-void func_8006A300(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_24B00/func_8006A300.s")
 
 void func_8006A748(void) {
     UnkStruct_80192690* temp_a0;
@@ -266,24 +265,17 @@ void func_8006AACC(s32 arg0) {
     }
 }
 
-void func_8006AC84(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_24B00/func_8006AC84.s")
 
-void func_8006B334(Gfx** arg0) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_24B00/func_8006B334.s")
 
-void func_8006BE74(Gfx** arg0) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_24B00/func_8006BE74.s")
 
-void func_8006C5D8(void* arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_24B00/func_8006C5D8.s")
 
-void func_8006E0F4(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_24B00/func_8006E0F4.s")
 
-void func_8006E674(Gfx** arg0) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_24B00/func_8006E674.s")
 
 void func_8006CB98(Gfx** gdl) {
     s32 var_s3;

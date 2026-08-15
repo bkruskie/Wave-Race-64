@@ -5,9 +5,7 @@ extern s32 D_802288F4;
 extern s32 D_802288F8;
 extern s32 D_802288FC;
 
-void func_801E3250(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/codeseg/B17D0/func_801E3250.s")
 
 Gfx* func_801E34F8(Gfx* arg0) {
     if (D_801CE63C != 0) {

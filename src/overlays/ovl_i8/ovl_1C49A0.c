@@ -1,30 +1,18 @@
 #include "common.h"
 
-void func_i8_802C5800(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i8/ovl_1C49A0/func_i8_802C5800.s")
 
-void func_i8_802C5D3C(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i8/ovl_1C49A0/func_i8_802C5D3C.s")
 
-void func_i8_802C5EB8(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i8/ovl_1C49A0/func_i8_802C5EB8.s")
 
-void func_i8_802C63E4(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i8/ovl_1C49A0/func_i8_802C63E4.s")
 
-void func_i8_802C6ADC(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i8/ovl_1C49A0/func_i8_802C6ADC.s")
 
-void func_i8_802C6D58(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i8/ovl_1C49A0/func_i8_802C6D58.s")
 
-void func_i8_802C6DA8(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i8/ovl_1C49A0/func_i8_802C6DA8.s")
 
 void func_i8_802C6E00(void) {
     if ((D_802C7548) != 0) {
@@ -41,9 +29,7 @@ void func_i8_802C6E68(void* arg0) {
     }
 }
 
-void func_i8_802C6EB8(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i8/ovl_1C49A0/func_i8_802C6EB8.s")
 
 void func_i8_802C6F4C(void) {
     gPrevGameState = gGameState;

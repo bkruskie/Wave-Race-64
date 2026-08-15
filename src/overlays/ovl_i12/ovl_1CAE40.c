@@ -21,10 +21,8 @@ Gfx* func_i12_802C5800(Gfx* dList) {
     return dList;
 }
 
-void func_i12_802C58A0(Gfx* dList) {
-    (void)dList;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i12/ovl_1CAE40/func_i12_802C58A0.s")
 
-void func_i12_802C5F6C(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i12/ovl_1CAE40/func_i12_802C5EE4.s")
+
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i12/ovl_1CAE40/func_i12_802C5F6C.s")

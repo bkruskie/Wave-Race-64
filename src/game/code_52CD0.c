@@ -476,8 +476,7 @@ void func_8009917C(Vec3f* arg0, Vec3f* arg1, Vec3f* arg2, Vec3f* arg3) {
               (SIN((s32) ((arg3->y / 360.0f) * 4096.0f)) * sp24.vec1.x);
 }
 
-s32 func_8009934C(UnkStruct_801CEBE0* arg0, f32 arg1, f32 arg2, f32 arg3) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_8009934C.s")
 
 s32 func_80099514(s32 arg0, s32 arg1, UnkStruct_801CED60* arg2, s16* arg3, f32* arg4) {
     return arg0;
@@ -496,8 +495,7 @@ void func_80099858(struct UnkStruct_80099858* arg0, s8 arg1, s8 arg2, u16 arg3, 
     arg0->unk8 = arg4[2];
 }
 
-void func_800998B0(void* arg0, void* arg1, s32 arg2) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800998B0.s")
 
 s32 func_80099A00(UnkStruct_801CF060* arg0, void* arg1, void* arg2, s32 arg3) {
     s32 sp28;
@@ -640,8 +638,7 @@ void func_8009A04C(s32 arg0, s16 arg1) {
     }
 }
 
-void func_8009A1CC(UnkStruct_8009A04C* arg0, f32 arg1) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_8009A1CC.s")
 
 void func_8009A2E4(UnkStruct_8009A04C* arg0) {
     UnkStruct_80192690* temp_s0;
@@ -1539,10 +1536,7 @@ void func_8009C2CC(UnkStruct_801CEBE0* arg0) {
 }
 #endif
 
-void func_8009C814(UnkStruct_8009A04C* arg0, s32 arg1) {
-    (void)arg0;
-    (void)arg1;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_8009C814.s")
 
 void func_8009C968(void) {
     s32 i;
@@ -1636,8 +1630,7 @@ u8 func_8009CCE8(UnkStruct_func_8009CCE8* arg0) {
     return D_801CEAA4[arg0->unkE8];
 }
 
-void func_8009CD50(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_8009CD50.s")
 
 void func_8009D320(void) {
     if (D_800E5148 == 0) {
@@ -1778,8 +1771,7 @@ Gfx* func_800A28F4(Gfx* arg0, s32 arg1) {
     return arg0;
 }
 
-Gfx* func_800A2B24(s32 arg0) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800A2B24.s")
 
 Gfx* func_800A52D8(Gfx* arg0, s32 arg1) {
     return arg0;
@@ -1977,8 +1969,7 @@ s32 func_800A6684(s32 arg0) {
     return 0;
 }
 
-void func_800A68A4(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800A68A4.s")
 
 // TODO: Migrate rodata
 extern f32 D_800EB950; // 6000.0f
@@ -2212,14 +2203,11 @@ void func_800A9494(s32 arg0) {
     }
 }
 
-void func_800A9D48(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800A9D48.s")
 
-void func_800AAAC8(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800AAAC8.s")
 
-void func_800AB25C(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800AB25C.s")
 
 void func_800AB890(s32 arg0) {
     s32 temp_v1;
@@ -2243,8 +2231,7 @@ void func_800AB92C(void) {
     func_8009D5C0();
 }
 
-void func_800AB95C(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800AB95C.s")
 
 typedef struct UnkStruct_800AC098_src {
     f32 unk_minus_28;
@@ -2300,8 +2287,7 @@ void func_800AC098(UnkStruct_800AC098_src* src, s32 count) {
     D_800E62CC = limit;
 }
 
-void func_800AC184(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800AC184.s")
 
 void func_800AD3C4(void) {
     switch (gCourseID) {
@@ -2316,8 +2302,7 @@ void func_800AD3C4(void) {
     }
 }
 
-void func_800AD418(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800AD418.s")
 
 #ifdef NEEDS_RODATA
 

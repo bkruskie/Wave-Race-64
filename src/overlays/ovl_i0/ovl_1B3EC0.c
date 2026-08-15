@@ -60,14 +60,11 @@ Gfx* func_i0_802C5800(Gfx* arg0) {
 void stub_func_i0_802C5800() {
 }
 
-void func_i0_802C5A7C(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i0/ovl_1B3EC0/func_i0_802C5A7C.s")
 
-void func_i0_802C6044(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i0/ovl_1B3EC0/func_i0_802C6044.s")
 
-void func_i0_802C63AC(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i0/ovl_1B3EC0/func_i0_802C63AC.s")
 
 void func_i0_802C6878(void) {
     gPrevGameState = gGameState;

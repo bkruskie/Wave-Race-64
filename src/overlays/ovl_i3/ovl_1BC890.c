@@ -1,7 +1,6 @@
 #include "global.h"
 
-void func_i3_802C5800(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i3/ovl_1BC890/func_i3_802C5800.s")
 
 void func_i3_802C5AE8(void) {
 }
@@ -10,14 +9,11 @@ void func_i3_802C5AF0(void) {
     func_80069798(D_801CE5F8 + 0xA80, D_801CE5F8 + 0x1780, D_801CE5F8 + 0xA40, &D_802C7024, &D_80198310, &D_80198350);
 }
 
-void func_i3_802C5B40(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i3/ovl_1BC890/func_i3_802C5B40.s")
 
-void func_i3_802C5D54(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i3/ovl_1BC890/func_i3_802C5D54.s")
 
-void func_i3_802C6344(void) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i3/ovl_1BC890/func_i3_802C6344.s")
 
 void func_i3_802C6E9C(void) {
     gPrevGameState = gGameState;

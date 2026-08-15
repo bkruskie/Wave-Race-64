@@ -55,8 +55,7 @@ void func_801E68EC(void* arg0) {
     ((UnkStruct_menu_buffer_1*)arg0)->unk_6 = 1;
 }
 
-void func_801E6A4C(s32 arg0, s32 arg1) {
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/codeseg/B3AA0/func_801E6A4C.s")
 
 s32 func_801E6F6C(void) {
     s32 var_v0;

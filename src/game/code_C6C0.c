@@ -1765,45 +1765,37 @@ void func_80067C6C(void* dest, void* src) {
     *(s32*)((s32)dest + 8) = *(s32*)((s32)src + 8);
 }
 
-void func_80067E40(void) {
     // C reconstruction of func_80067E40
     // stack frame: 0x98 bytes
     // saves $ra,$fp,$s0-$s7 to stack at offsets 0x18-0x3C
     // $v0 = lw from D_801CE638; bnez $v0, continue_init
     // else: fall through to course config check
-    
     // lui $t6, %hi(D_800DAB60); lh $t6, %lo(D_800DAB60)($t6)
     // if $t6 == 0, skip to course config; else load course config
-    
     // lh $t7, 0x0($a0); xori $t8, $t7, 0x1; sh $t8, 0x0($a0)
     // $s1 = gRiders; addiu $s1, $s1, -1; bltz $s1, skip_to_end
-    
     // Compute index = $s1 * 24 via sll+subu sequences
     // Load tables: D_800D48E0, D_800D48DC, gRiderGameModes
     // Loop .L80067F08 with func_8006AC84 and func_8006390C calls
     // addiu $s1, $s1, -1; bgez $s1, .L80067F08 (loop back)
     // $s0 += -0x1718 after loop
-    
     // Course ID check: lw $v0 from D_801CE638; lw $t7 from gCourseID
     // slti $at, $t7, 9; beqz $at, .L80068020 (if course < 9)
     // addiu $at, 0x15; beq $v0, $at, .L80068020 (if course == 0x15)
-    
     // .L80068020: lui $v1, %hi(D_800D496C); addiu $v1, %lo(D_800D496C)
     // sh $zero, 0x0($v1); b .L80068034
-    
     // .L80068034: addiu $at, 4; bne $v0, $at, .L80068048
     // lui $at, %hi(D_800D4978); b .L80068050
     // .L80068048: lui $at, %hi(D_800D4978); sh $s2, %lo(D_800D4978)($at)
     // .L80068050: jal func_80067C6C; nop
     // [COP2 floating point blocks: lwc1/swc1 with various offsets]
     // [10+ iterations of multu/mflo/lwc1/swc1 patterns]
-    
     // Restore: lw $ra, 0x3C($sp); lw $fp, 0x38($sp); lw $s7, 0x34($sp);
     //          lw $s6, 0x30($sp); lw $s5, 0x2C($sp); lw $s4, 0x28($sp);
     //          lw $s3, 0x24($sp); lw $s2, 0x20($sp); lw $s1, 0x1C($sp);
     //          lw $s0, 0x18($sp); addiu $sp, $sp, 0x98  // delay slot (MUST BE PRESERVED)
     // jr $ra
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_C6C0/func_80067E40.s")
 
 #pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_C6C0/func_800683A0.s")
 

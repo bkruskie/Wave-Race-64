@@ -38,13 +38,9 @@ void func_i14_802C5840(void) {
     func_800C37F4(0x31, 0);
 }
 
-void func_i14_802C5924(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i14/ovl_1CF180/func_i14_802C5924.s")
 
-void func_i14_802C5B70(s32 arg0) {
-    (void)arg0;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/overlays/ovl_i14/ovl_1CF180/func_i14_802C5B70.s")
 
 void func_i14_802C5E5C(s32 arg0) {
     gPrevGameState = gGameState;

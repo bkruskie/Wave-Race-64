@@ -5,68 +5,23 @@ extern s32 D_800D45DC[]; // array pointing to some mio0 adresses
 s32 func_1B1FB0_802C71B8(s32, char, s32, s32);
 extern s32 D_802C7718;
 
-void func_1B1FB0_802C5800(s32 arg0, char arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/unused_code_1B1FB0/func_1B1FB0_802C5800.s")
 
-void func_1B1FB0_802C5BA4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/unused_code_1B1FB0/func_1B1FB0_802C5BA4.s")
 
-void func_1B1FB0_802C5DF4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/unused_code_1B1FB0/func_1B1FB0_802C5DF4.s")
 
-void func_1B1FB0_802C62E4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/unused_code_1B1FB0/func_1B1FB0_802C62E4.s")
 
-void func_1B1FB0_802C67BC(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/unused_code_1B1FB0/func_1B1FB0_802C67BC.s")
 
-void func_1B1FB0_802C6970(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/unused_code_1B1FB0/func_1B1FB0_802C6970.s")
 
-void func_1B1FB0_802C6C1C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/unused_code_1B1FB0/func_1B1FB0_802C6C1C.s")
 
-void func_1B1FB0_802C6E40(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/unused_code_1B1FB0/func_1B1FB0_802C6E40.s")
 
-void func_1B1FB0_802C6FF8(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    (void)arg0;
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-}
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/unused_code_1B1FB0/func_1B1FB0_802C6FF8.s")
 
 s32 func_1B1FB0_802C71B8(s32 arg0, char arg1, s32 arg2, s32 arg3) {
     (void)arg0;
