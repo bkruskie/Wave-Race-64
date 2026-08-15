@@ -1,0 +1,48 @@
+{
+  "project_name": "Wave Race 64",
+  "repo": "bkruskie/Wave-Race-64",
+  "total_functions": 1365,
+  "categories": {
+    "game": {
+      "total": 500,
+      "description": "Main game code functions"
+    },
+    "codeseg": {
+      "total": 218,
+      "description": "Codesegment functions (display lists, etc.)"
+    },
+    "audio": {
+      "total": 228,
+      "description": "Audio synthesis and playback functions"
+    },
+    "sys": {
+      "total": 37,
+      "description": "System utility functions"
+    },
+    "overlays": {
+      "total": 147,
+      "description": "Overlay region functions"
+    },
+    "unused_code_1B1FB0": {
+      "total": 14,
+      "description": "Unused code stubs"
+    },
+    "seg_1C3780": {
+      "total": 4,
+      "description": "Segment 1C3780 functions"
+    },
+    "seg_1C3D00": {
+      "total": 5,
+      "description": "Segment 1C3D00 functions"
+    }
+  },
+  "progress_metrics": {
+    "normalized_ratio": "instruction matching ignoring $ prefix and hex formatting",
+    "opcode_only": "opcode-only sequence ratio (ignores registers/operands)",
+    "register_alloc": "register allocation match ratio (target vs compiled)"
+  },
+  "badge_endpoints": {
+    "functions": "https://decomp.dev/bkruskie/Wave-Race-64/badge/functions",
+    "progress": "https://decomp.dev/bkruskie/Wave-Race-64/badge/progress"
+  }
+}
