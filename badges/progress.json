@@ -1,0 +1,70 @@
+{
+  "total_functions": 1365,
+  "matched_functions": 889,
+  "progress_percent": 65.13,
+  "category_total": 1341,
+  "category_matched": 981,
+  "categories": {
+    "game": {
+      "total": 500,
+      "matched": 398,
+      "pct": 79.6
+    },
+    "audio": {
+      "total": 228,
+      "matched": 223,
+      "pct": 97.81
+    },
+    "codeseg": {
+      "total": 218,
+      "matched": 118,
+      "pct": 54.13
+    },
+    "sys": {
+      "total": 37,
+      "matched": 32,
+      "pct": 86.49
+    },
+    "overlays": {
+      "total": 147,
+      "matched": 43,
+      "pct": 29.25
+    },
+    "libultra": {
+      "total": 153,
+      "matched": 153,
+      "pct": 100.0
+    },
+    "us": {
+      "total": 35,
+      "matched": 0,
+      "pct": 0.0
+    },
+    "bin": {
+      "total": 0,
+      "matched": 0,
+      "pct": 0
+    },
+    "ovl_table": {
+      "total": 0,
+      "matched": 0,
+      "pct": 0
+    },
+    "unused_code_1B1FB0": {
+      "total": 14,
+      "matched": 5,
+      "pct": 35.71
+    },
+    "seg_1C3780": {
+      "total": 4,
+      "matched": 4,
+      "pct": 100.0
+    },
+    "seg_1C3D00": {
+      "total": 5,
+      "matched": 5,
+      "pct": 100.0
+    }
+  },
+  "uncategorized": 24
+}
