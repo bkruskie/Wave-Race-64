@@ -1,0 +1,33 @@
+{
+  "project_name": "Wave Race 64",
+  "repo": "bkruskie/Wave-Race-64",
+  "total_functions": 1365,
+  "categories": {
+    "game": {"total": 500, "description": "Main game code functions"},
+    "audio": {"total": 228, "description": "Audio synthesis and playback"},
+    "codeseg": {"total": 218, "description": "Codesegment and display lists"},
+    "sys": {"total": 37, "description": "System utility functions"},
+    "overlays": {"total": 147, "description": "Overlay region functions"},
+    "libultra": {"total": 153, "description": "libultra library functions"},
+    "us_tracked": {"total": 35, "description": "US version specific functions (in objdiff us category)"},
+    "uncategorized": {"total": 24, "description": "Functions in .s files outside 12 main categories - still tracked by CI"},
+    "seg_1C3780": {"total": 4, "description": "Segment 1C3780 functions"},
+    "seg_1C3D00": {"total": 5, "description": "Segment 1C3D00 functions"},
+    "unused_code_1B1FB0": {"total": 14, "description": "Unused code stubs"}
+  },
+  "sum_check": {
+    "sum_of_categories": 1341,
+    "total_rom_functions": 1365,
+    "uncategorized_count": 24,
+    "note": "24 functions in .s files outside 12 objdiff categories - still tracked by CI and decomp.dev"
+  },
+  "progress_metrics": {
+    "normalized_ratio": "instruction matching ignoring $ prefix and hex formatting",
+    "opcode_only": "opcode-only sequence ratio (ignores registers/operands)",
+    "register_alloc": "register allocation match ratio (target vs compiled)"
+  },
+  "badge_endpoints": {
+    "functions": "https://decomp.dev/bkruskie/Wave-Race-64/badge/functions",
+    "progress": "https://decomp.dev/bkruskie/Wave-Race-64/badge/progress"
+  }
+}
