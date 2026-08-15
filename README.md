@@ -23,8 +23,10 @@ Run `python3 tools/update_credits.py` to refresh this list from GitHub.
 # Progress (Auto-Updated) 
 - Game Code
 <p align="left">
-    <a href="" alt="WR64_Total_Functions">
-        <img src="https://img.shields.io/badge/progress-72.02%25-brightgreen" /></a>
+    <a href="" alt="Progress">
+        <img src="https://img.shields.io/badge/Progress-72.02%25-brightgreen" /></a>
+    <a href="" alt="Functions">
+        <img src="https://img.shields.io/badge/Functions-981/1365-brightgreen" /></a>
 </p>
 
 - Assets
