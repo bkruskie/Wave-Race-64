@@ -6,6 +6,8 @@ jobs:
   build_repo:
     name: Build ROM US REV 1
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     strategy:
       fail-fast: false
@@ -26,49 +28,27 @@ jobs:
       run: make dependencies
 
     - name: Get the baserom
-      env:
-        WR64_TOKEN: ${{ secrets.WR64_TOKEN }}
-        WR64_REPO: ${{ secrets.WR64_REPO }}
-        SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
-        SECRET_REPO: ${{ secrets.SECRET_REPO }}
       run: |
-        echo "=== Secret Check ==="
-        echo "WR64_REPO: ${WR64_REPO:-EMPTY}"
-        echo "WR64_TOKEN: ${WR64_TOKEN:+SET (${#WR64_TOKEN} chars)}"
-        echo "SECRET_REPO: ${SECRET_REPO:-EMPTY}"
-        echo "SECRET_TOKEN: ${SECRET_TOKEN:+SET (${#SECRET_TOKEN} chars)}"
-        
-        REPO="$WR64_REPO"
-        TOKEN="$WR64_TOKEN"
-        if [ -z "$REPO" ] && [ -n "$SECRET_REPO" ]; then
-          REPO="$SECRET_REPO"
-        fi
-        if [ -z "$TOKEN" ] && [ -n "$SECRET_TOKEN" ]; then
-          TOKEN="$SECRET_TOKEN"
-        fi
-        
-        if [ -z "$REPO" ] || [ -z "$TOKEN" ]; then
-          echo "ERROR: Missing secrets. REPO=$([ -z "$REPO" ] && echo EMPTY || echo SET), TOKEN=$([ -z "$TOKEN" ] && echo EMPTY || echo SET)"
-          echo "Available secrets: WR64_REPO, WR64_TOKEN, SECRET_REPO, SECRET_TOKEN"
-          mkdir -p debug
-          echo "REPO=$REPO" > debug/secrets.txt
-          echo "TOKEN len=${#TOKEN}" >> debug/secrets.txt
-          exit 1
-        fi
-        
-        echo "Cloning $REPO..."
-        git clone --depth=1 https://x-access-token:$TOKEN@github.com/$REPO.git wr64-secret 2>&1
-        echo "=== wr64-secret contents ==="
-        ls -la wr64-secret/ 2>&1
-        cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64 2>&1
-        ls -la ./baserom.us.rev1.z64 2>&1
-
-    - name: Upload debug info
-      if: failure()
-      uses: actions/upload-artifact@v4
-      with:
-        name: debug-info
-        path: debug/
+        echo "Trying to clone wr64-baserom with GITHUB_TOKEN..."
+        git clone --depth=1 https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/bkruskie/wr64-baserom.git wr64-secret 2>&1 || {
+          echo "GITHUB_TOKEN clone failed, trying with WR64_TOKEN..."
+          REPO="${{ secrets.WR64_REPO }}"
+          TOKEN="${{ secrets.WR64_TOKEN }}"
+          if [ -z "$REPO" ]; then REPO="bkruskie/wr64-baserom"; fi
+          if [ -z "$TOKEN" ]; then
+            REPO="${{ secrets.SECRET_REPO }}"
+            TOKEN="${{ secrets.SECRET_TOKEN }}"
+          fi
+          if [ -n "$REPO" ] && [ -n "$TOKEN" ]; then
+            git clone --depth=1 https://x-access-token:$TOKEN@github.com/$REPO.git wr64-secret 2>&1
+          else
+            echo "ERROR: No valid credentials found. Please check secrets."
+            exit 1
+          fi
+        }
+        ls -la wr64-secret/
+        cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
+        ls -la ./baserom.us.rev1.z64
 
     - name: Extract
       run: make extract
