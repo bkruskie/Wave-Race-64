@@ -93,8 +93,6 @@ void FadeTransition_SetProps(s32 type, u32 fadeTime, s32 duration) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/codeseg/wr64_fade/func_801E6FB0.s")
-
 void func_801E71A8(void) {
     FadeTransition* fade = &sCurrentFadeTransitionProps;
 
