@@ -34,11 +34,15 @@ jobs:
     - name: Build Dependencies
       run: make dependencies
 
-    - name: Get baserom
-      run: |
-        echo Ensure
-      env:
-        BASEROM_KEY: ${{ secrets.BASEROM_KEY }}
+    - name: Get extra dependencies
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ secrets.WR64_REPO }}
+        token: ${{ secrets.WR64_TOKEN }}
+        path: wr64-secret
+
+    - name: Get the baserom
+      run: cp -r wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
 
     - name: Extract
       run: make extract
@@ -54,3 +58,10 @@ jobs:
       with:
         name: ${{ matrix.version }}_report
         path: build/progress.json
+
+    - name: Discord Progress
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+      run: python3 tools/upload_progress.py --discord_url ${{ secrets.DISCORD_URL }}
+
+    - name: Cleanup
+      run: rm -f baserom.us.rev1.z64
