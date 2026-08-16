@@ -31,7 +31,7 @@ options:
   asm_data_macro: dlabel
   data_string_guesser_level: 2
   rodata_string_guesser_level: 2
-  migrate_rodata_to_functions: True
+  migrate_rodata_to_functions: False
   disasm_unknown: True
   create_asm_dependencies: True
   ld_dependencies: True
@@ -268,10 +268,10 @@ segments:
       - [0xA39F0, .data, libultra/libc/xlitob] 
 
       # GAME RODATA
-      - [0xA3A20, .rodata, sys/sys_utils]
-      - [0xA3A70, .rodata, game/code_5480]
-      - [0xA3A80, .rodata, game/water_69D0]
-      - [0xA3B30, .rodata, game/code_C6C0]
+      - [0xA3A20, rodata]
+      - [0xA3A70, rodata]
+      - [0xA3A80, rodata]
+      - [0xA3B30, rodata]
 
       # Individual data files?
       - [0xA4070, data]
@@ -285,39 +285,39 @@ segments:
       - [0xA4270, data]
       - [0xA42B0, data]
 
-      - [0xA4330, .rodata, game/code_24B00]
-      - [0xA4340, .rodata, game/code_2C670]
-      - [0xA4520, .rodata, game/code_2FB10]
-      - [0xA4610, .rodata, game/core/wr64_save]
-      - [0xA4BA0, .rodata, game/code_383C0]
-      - [0xA4BF0, .rodata, game/code_39F00]
-      - [0xA4C00, .rodata, game/code_3A580]
-      - [0xA4C10, .rodata, game/code_3AC00]
-      - [0xA52B0, .rodata, game/code_42670]
-      - [0xA52D0, .rodata, game/code_43A60]
-      - [0xA52F0, .rodata, game/code_43DA0]
-      - [0xA53B0, .rodata, game/code_4C750]
-      - [0xA5950, .rodata, game/code_4F850]
-      - [0xA5B20, .rodata, game/wr64_game_load]
+      - [0xA4330, rodata]
+      - [0xA4340, rodata]
+      - [0xA4520, rodata]
+      - [0xA4610, rodata]
+      - [0xA4BA0, rodata]
+      - [0xA4BF0, rodata]
+      - [0xA4C00, rodata]
+      - [0xA4C10, rodata]
+      - [0xA52B0, rodata]
+      - [0xA52D0, rodata]
+      - [0xA52F0, rodata]
+      - [0xA53B0, rodata]
+      - [0xA5950, rodata]
+      - [0xA5B20, rodata]
       - [0xA5CC0, data] # rodata from code_52CD0, introduces a gap if .rodata'd
-      - [0xA6350, .rodata, game/code_68A10]
+      - [0xA6350, rodata]
 
       # AUDIO RODATA
-      - [0xA6420, .rodata, audio/audio_heap]
-      - [0xA6450, .rodata, audio/audio_load]
-      - [0xA6460, .rodata, audio/audio_playback]
-      - [0xA6490, .rodata, audio/audio_effects]
-      - [0xA64C0, .rodata, audio/audio_seqplayer]
-      - [0xA6B60, .rodata, audio/audio_general]
-      - [0xA6DB0, .rodata, audio/audio_thread]
+      - [0xA6420, rodata]
+      - [0xA6450, rodata]
+      - [0xA6460, rodata]
+      - [0xA6490, rodata]
+      - [0xA64C0, rodata]
+      - [0xA6B60, rodata]
+      - [0xA6DB0, rodata]
 
       # LIBULTRA RODATA
-      - [0xA6DD0, .rodata, libultra/gu/lookatref]
-      - [0xA6DE0, .rodata, libultra/gu/lookathil]
+      - [0xA6DD0, rodata]
+      - [0xA6DE0, rodata]
       - [0xA6E00, rodata]
-      - [0xA6E50, .rodata, libultra/libc/xprintf]
+      - [0xA6E50, rodata]
       - [0xA6F50, rodata]
-      - [0xA6FD0, .rodata, libultra/libc/xldtob]
+      - [0xA6FD0, rodata]
 
       - [0xA7030, data] # looks like audio data
 
@@ -361,26 +361,26 @@ segments:
     - [0xC94E0, c, codeseg/C94E0] #
     - [0xCAE70, data] # needs splitting
     - [0xF2810, data, codeseg/A95D0]
-    - [0xF4540, .rodata, codeseg/A95D0]
+    - [0xF4540, rodata]
     - [0xF4670, data, codeseg/AF8C0]
-    - [0xF4840, .rodata, codeseg/AF8C0]
+    - [0xF4840, rodata]
     - [0xF4960, data, codeseg/B17D0]
-    - [0xF49B0, .rodata, codeseg/B17D0]
+    - [0xF49B0, rodata]
     - [0xF49F0, data, codeseg/B2510]
-    - [0xF51B0, .rodata, codeseg/B2510]
+    - [0xF51B0, rodata]
     - [0xF51D0, data, codeseg/B2A70]
-    - [0xF5240, .rodata, codeseg/B2A70]
+    - [0xF5240, rodata]
     - [0xF5260, data, codeseg/B3290]
-    - [0xF5270, .rodata, codeseg/B3290]
+    - [0xF5270, rodata]
     - [0xF5280, data, codeseg/B3AA0]
-    - [0xF52B0, .rodata, codeseg/B3AA0]
+    - [0xF52B0, rodata]
     - [0xF52F0, data, codeseg/wr64_fade]
-    - [0xF5340, .rodata, codeseg/wr64_fade]
+    - [0xF5340, rodata]
     - [0xF53A0, data, codeseg/B66E0]
     - [0xF5470, data] # single file data ?
-    - [0xF5480, .rodata, codeseg/B66E0]
+    - [0xF5480, rodata]
     - [0xF5520, data, codeseg/B97B0]
-    - [0xF5D40, .rodata, codeseg/B97B0]
+    - [0xF5D40, rodata]
     - [0xF5D70, data, codeseg/C94E0]
     #- [0xF5F30, data]
     - [0xF6010, data]
@@ -407,7 +407,7 @@ segments:
     subsegments:
     - [0x1B1FB0, c, unused_code_1B1FB0]
     - [0x1B3E10, data, unused_code_1B1FB0]
-    - [0x1B3EB0, .rodata, unused_code_1B1FB0]
+    - [0x1B3EB0, rodata]
     # - { type: .bss, vram: 0xD_802C7710, name: unused_code_1B1FB0 }
 
   - name: ovl_i0
@@ -420,7 +420,7 @@ segments:
     subsegments:
     - [0x1B3EC0, c, ovl_1B3EC0]
     - [0x1B5280, data, ovl_1B3EC0]
-    - [0x1B5560, .rodata, ovl_1B3EC0]
+    - [0x1B5560, rodata]
 
     # Loaded when the game enters in a race
   - name: ovl_i1
@@ -433,7 +433,7 @@ segments:
     subsegments:
     - [0x1B55A0, c, ovl_1B55A0]
     - [0x1B91E0, data, ovl_1B55A0]
-    - [0x1B9320, .rodata, ovl_1B55A0]
+    - [0x1B9320, rodata]
 
     # Rider selection?
   - name: ovl_i2
@@ -446,7 +446,7 @@ segments:
     subsegments:
     - [0x1B9440, c, ovl_1B9440]
     - [0x1BC7F0, data, ovl_1B9440]
-    - [0x1BC820, .rodata, ovl_1B9440] # symbol D_i2_802C8BD8 leaked into rodata? that's weird
+    - [0x1BC820, rodata]
 
   # Before race (map overview?)
   - name: ovl_i3
@@ -459,7 +459,7 @@ segments:
     subsegments:
     - [0x1BC890, c, ovl_1BC890] 
     - [0x1BDFE0, data, ovl_1BC890]
-    - [0x1BE080, .rodata, ovl_1BC890]
+    - [0x1BE080, rodata]
 
   - name: ovl_i4
     type: code
@@ -471,7 +471,7 @@ segments:
     subsegments:
     - [0x1BE0B0, c, ovl_1BE0B0]
     - [0x1BFDE0, data, ovl_1BE0B0]
-    - [0x1BFF40, .rodata, ovl_1BE0B0]
+    - [0x1BFF40, rodata]
 
   - name: ovl_i5
     type: code
@@ -484,8 +484,8 @@ segments:
     - [0x1BFF50, c, ovl_1BFF50] # Pre - race (map overview?)
     - [0x1C17E0, c, ovl_1C17E0]
     - [0x1C2150, data, ovl_1BFF50]
-    - [0x1C2190, .rodata, ovl_1BFF50]
-    - [0x1C21F0, .rodata, ovl_1C17E0]
+    - [0x1C2190, rodata]
+    - [0x1C21F0, rodata]
 
   - name: ovl_i6
     type: code
@@ -497,7 +497,7 @@ segments:
     subsegments:
     - [0x1C2250, c, ovl_1C2250]
     - [0x1C36C0, data, ovl_1C2250]
-    - [0x1C3700, .rodata, ovl_1C2250]
+    - [0x1C3700, rodata]
 
     # Total points screen
   - name: seg_1C3780
@@ -509,7 +509,7 @@ segments:
     subsegments:
     - [0x1C3780, c, seg_1C3780]
     - [0x1C3CB0, data, seg_1C3780]
-    - [0x1C3CE0, .rodata, seg_1C3780]
+    - [0x1C3CE0, rodata]
 
 
   - name: seg_1C3D00
@@ -521,7 +521,7 @@ segments:
     subsegments:
     - [0x1C3D00, c, seg_1C3D00]
     - [0x1C43B0, data, seg_1C3D00]
-    - [0x1C43E0, .rodata, seg_1C3D00]
+    - [0x1C43E0, rodata]
 
 
   # OPTIONS overlay
@@ -535,7 +535,7 @@ segments:
     subsegments:
     - [0x1C43F0, c, ovl_1C43F0] 
     - [0x1C4910, data, ovl_1C43F0]
-    - [0x1C4970, .rodata, ovl_1C43F0]
+    - [0x1C4970, rodata]
 
   # Options - Change name
   - name: ovl_i8
@@ -548,7 +548,7 @@ segments:
     subsegments:
     - [0x1C49A0, c, ovl_1C49A0] 
     - [0x1C61E0, data, ovl_1C49A0]
-    - [0x1C66B0, .rodata, ovl_1C49A0]
+    - [0x1C66B0, rodata]
 
     # Options - View records.
   - name: ovl_i9
@@ -561,7 +561,7 @@ segments:
     subsegments:
     - [0x1C66D0, c, ovl_1C66D0] 
     - [0x1C8F90, data, ovl_1C66D0]
-    - [0x1C9090, .rodata, ovl_1C66D0]
+    - [0x1C9090, rodata]
 
     # Options - Change names
   - name: ovl_i10
@@ -574,7 +574,7 @@ segments:
     subsegments:
     - [0x1C9150, c, ovl_1C9150] 
     - [0x1CA3F0, data, ovl_1C9150]
-    - [0x1CA470, .rodata, ovl_1C9150]
+    - [0x1CA470, rodata]
 
     # Options - Audio
   - name: ovl_i11
@@ -587,7 +587,7 @@ segments:
     subsegments:
     - [0x1CA480, c, ovl_1CA480] 
     - [0x1CADD0, data, ovl_1CA480]  
-    - [0x1CAE30, .rodata, ovl_1CA480]  
+    - [0x1CAE30, rodata]  
 
     # Options - Erase course records
   - name: ovl_i12
@@ -612,7 +612,7 @@ segments:
     subsegments:
     - [0x1CBAF0, c, ovl_1CBAF0] 
     - [0x1CF040, data, ovl_1CBAF0]
-    - [0x1CF0E0, .rodata, ovl_1CBAF0]
+    - [0x1CF0E0, rodata]
 
     # Menu for the stunt and time trials mode or GAME OVER
   - name: ovl_i14
@@ -625,7 +625,7 @@ segments:
     subsegments:
     - [0x1CF180, c, ovl_1CF180] 
     - [0x1CFA70, data, ovl_1CF180]
-    - [0x1CFAC0, .rodata, ovl_1CF180]
+    - [0x1CFAC0, rodata]
 
     # Prize scene
   - name: ovl_i15
@@ -638,7 +638,7 @@ segments:
     subsegments:
     - [0x1CFB60, c, ovl_1CFB60] 
     - [0x1D10B0, data, ovl_1CFB60]    
-    - [0x1D1180, .rodata, ovl_1CFB60]    
+    - [0x1D1180, rodata]    
 
   - name: LAST_MIO0_SEG
     type: code
