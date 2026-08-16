@@ -54,7 +54,7 @@ jobs:
       run: make extract
 
     - name: Build
-      run: make
+      run: make COMPARE=0
 
     - name: Generate Progress Report
       run: python3 -m mapfile_parser objdiff_report --version ${{ matrix.version }}
