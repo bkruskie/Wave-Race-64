@@ -43,12 +43,24 @@ jobs:
 
     - name: Debug baserom
       run: |
-        echo "Contents of wr64-secret:"
-        ls -la wr64-secret/
-        file wr64-secret/baserom.us.z64 2>/dev/null || echo "File not found"
+        echo "=== Contents of wr64-secret ==="
+        ls -la wr64-secret/ 2>&1
+        echo "=== File details ==="
+        ls -la wr64-secret/baserom.us.z64 2>&1 || echo "File not found!"
+        echo "=== Trying to copy ==="
+        cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64 2>&1 || echo "COPY FAILED: $?"
+        ls -la ./baserom.us.rev1.z64 2>&1 || echo "Destination not found!"
 
     - name: Get the baserom
-      run: cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
+      run: |
+        if [ -f wr64-secret/baserom.us.z64 ]; then
+          cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
+          echo "Baserom copied successfully"
+        else
+          echo "ERROR: baserom.us.z64 not found in wr64-secret!"
+          ls -la wr64-secret/
+          exit 1
+        fi
 
     - name: Extract
       run: make extract
