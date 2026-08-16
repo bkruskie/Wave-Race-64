@@ -32,6 +32,12 @@ jobs:
         SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
         SECRET_REPO: ${{ secrets.SECRET_REPO }}
       run: |
+        echo "=== Secret Check ==="
+        echo "WR64_REPO: ${WR64_REPO:-EMPTY}"
+        echo "WR64_TOKEN: ${WR64_TOKEN:+SET (${#WR64_TOKEN} chars)}"
+        echo "SECRET_REPO: ${SECRET_REPO:-EMPTY}"
+        echo "SECRET_TOKEN: ${SECRET_TOKEN:+SET (${#SECRET_TOKEN} chars)}"
+        
         REPO="$WR64_REPO"
         TOKEN="$WR64_TOKEN"
         if [ -z "$REPO" ] && [ -n "$SECRET_REPO" ]; then
@@ -40,20 +46,29 @@ jobs:
         if [ -z "$TOKEN" ] && [ -n "$SECRET_TOKEN" ]; then
           TOKEN="$SECRET_TOKEN"
         fi
+        
         if [ -z "$REPO" ] || [ -z "$TOKEN" ]; then
-          echo "ERROR: Missing repo or token secrets"
-          echo "WR64_REPO: $([ -n "$WR64_REPO" ] && echo set || echo empty)"
-          echo "SECRET_REPO: $([ -n "$SECRET_REPO" ] && echo set || echo empty)"
-          echo "WR64_TOKEN: $([ -n "$WR64_TOKEN" ] && echo set || echo empty)"
-          echo "SECRET_TOKEN: $([ -n "$SECRET_TOKEN" ] && echo set || echo empty)"
-          ls -la
+          echo "ERROR: Missing secrets. REPO=$([ -z "$REPO" ] && echo EMPTY || echo SET), TOKEN=$([ -z "$TOKEN" ] && echo EMPTY || echo SET)"
+          echo "Available secrets: WR64_REPO, WR64_TOKEN, SECRET_REPO, SECRET_TOKEN"
+          mkdir -p debug
+          echo "REPO=$REPO" > debug/secrets.txt
+          echo "TOKEN len=${#TOKEN}" >> debug/secrets.txt
           exit 1
         fi
-        echo "Cloning: $REPO"
-        git clone --depth=1 https://x-access-token:$TOKEN@github.com/$REPO.git wr64-secret
-        ls -la wr64-secret/
-        cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
-        ls -la ./baserom.us.rev1.z64
+        
+        echo "Cloning $REPO..."
+        git clone --depth=1 https://x-access-token:$TOKEN@github.com/$REPO.git wr64-secret 2>&1
+        echo "=== wr64-secret contents ==="
+        ls -la wr64-secret/ 2>&1
+        cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64 2>&1
+        ls -la ./baserom.us.rev1.z64 2>&1
+
+    - name: Upload debug info
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: debug-info
+        path: debug/
 
     - name: Extract
       run: make extract
