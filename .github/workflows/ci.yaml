@@ -15,15 +15,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      with:
-        persist-credentials: true
-        clean: true
-        sparse-checkout-cone-mode: true
-        fetch-depth: 0
-        fetch-tags: false
-        submodules: false
-        set-safe-directory: true
-        allow-unsafe-pr-checkout: false
 
     - name: Install package requirements
       run: sudo apt-get install -y git make git build-essential binutils-mips-linux-gnu python3 python3-pip
@@ -34,37 +25,33 @@ jobs:
     - name: Build Dependencies
       run: make dependencies
 
-    - name: Debug - Check secrets
-      run: |
-        echo "WR64_REPO = [${{ secrets.WR64_REPO }}]"
-        echo "WR64_TOKEN = ${SECRET_LEN_1:-${{ secrets.WR64_TOKEN | default: "" }}}"
-        if [ -n "${{ secrets.WR64_TOKEN }}" ]; then echo "WR64_TOKEN is set (len: $(echo -n "${{ secrets.WR64_TOKEN }}" | wc -c))"; else echo "WR64_TOKEN is NOT set"; fi
-        if [ -n "${{ secrets.SECRET_REPO }}" ]; then echo "SECRET_REPO is set"; else echo "SECRET_REPO is NOT set"; fi
-        if [ -n "${{ secrets.SECRET_TOKEN }}" ]; then echo "SECRET_TOKEN is set"; else echo "SECRET_TOKEN is NOT set"; fi
-        if [ -n "${{ secrets.SECRET_PASSPHRASE }}" ]; then echo "SECRET_PASSPHRASE is set"; else echo "SECRET_PASSPHRASE is NOT set"; fi
-
     - name: Get the baserom
+      env:
+        WR64_TOKEN: ${{ secrets.WR64_TOKEN }}
+        WR64_REPO: ${{ secrets.WR64_REPO }}
+        SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
+        SECRET_REPO: ${{ secrets.SECRET_REPO }}
       run: |
-        # Try WR64_* secrets first, then fall back to LLONSIT_* secrets
-        REPO=${{ secrets.WR64_REPO }}
-        TOKEN=${{ secrets.WR64_TOKEN }}
-        if [ -z "$REPO" ] && [ -n "${{ secrets.SECRET_REPO }}" ]; then
-          REPO=${{ secrets.SECRET_REPO }}
+        REPO="$WR64_REPO"
+        TOKEN="$WR64_TOKEN"
+        if [ -z "$REPO" ] && [ -n "$SECRET_REPO" ]; then
+          REPO="$SECRET_REPO"
         fi
-        if [ -z "$TOKEN" ] && [ -n "${{ secrets.SECRET_TOKEN }}" ]; then
-          TOKEN=${{ secrets.SECRET_TOKEN }}
+        if [ -z "$TOKEN" ] && [ -n "$SECRET_TOKEN" ]; then
+          TOKEN="$SECRET_TOKEN"
         fi
         if [ -z "$REPO" ] || [ -z "$TOKEN" ]; then
-          echo "ERROR: Missing REPO or TOKEN secrets"
-          echo "REPO is empty: $([ -z "$REPO" ] && echo yes || echo no)"
-          echo "TOKEN is empty: $([ -z "$TOKEN" ] && echo yes || echo no)"
+          echo "ERROR: Missing repo or token secrets"
+          echo "WR64_REPO: $([ -n "$WR64_REPO" ] && echo set || echo empty)"
+          echo "SECRET_REPO: $([ -n "$SECRET_REPO" ] && echo set || echo empty)"
+          echo "WR64_TOKEN: $([ -n "$WR64_TOKEN" ] && echo set || echo empty)"
+          echo "SECRET_TOKEN: $([ -n "$SECRET_TOKEN" ] && echo set || echo empty)"
+          ls -la
           exit 1
         fi
-        echo "Cloning baserom repo: $REPO"
+        echo "Cloning: $REPO"
         git clone --depth=1 https://x-access-token:$TOKEN@github.com/$REPO.git wr64-secret
-        echo "=== Contents of wr64-secret ==="
         ls -la wr64-secret/
-        echo "=== Copying baserom ==="
         cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
         ls -la ./baserom.us.rev1.z64
 
