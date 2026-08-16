@@ -40,21 +40,15 @@ jobs:
         repository: ${{ secrets.WR64_REPO }}
         token: ${{ secrets.WR64_TOKEN }}
         path: wr64-secret
-        ref: main
 
     - name: Debug baserom access
       run: |
         echo "WR64_REPO = ${{ secrets.WR64_REPO }}"
+        echo "WR64_TOKEN is set = $([ -n '${{ secrets.WR64_TOKEN }}' ] && echo yes || echo no)"
         echo "=== wr64-secret contents ==="
-        ls -la wr64-secret/
-        echo "=== Checking baserom ==="
-        if [ -f wr64-secret/baserom.us.z64 ]; then
-          echo "FOUND: baserom.us.z64"
-          ls -la wr64-secret/baserom.us.z64
-          wc -c wr64-secret/baserom.us.z64
-        else
-          echo "NOT FOUND: baserom.us.z64"
-        fi
+        ls -la wr64-secret/ 2>&1
+        echo "=== Git info ==="
+        cd wr64-secret && git log --oneline -5 && git branch -a && pwd
 
     - name: Get the baserom
       run: cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
