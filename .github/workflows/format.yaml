@@ -12,6 +12,9 @@ jobs:
     - name: Checkout reposistory
       uses: actions/checkout@v4
 
+    - name: Ensure script permissions
+      run: chmod +x tools/check_format.sh
+
     - name: Install package requirements
       run: sudo apt-get install -y python3 python3-pip clang-format-14 clang-tidy-14
 
