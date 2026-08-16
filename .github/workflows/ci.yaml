@@ -40,6 +40,7 @@ jobs:
         repository: ${{ secrets.WR64_REPO }}
         token: ${{ secrets.WR64_TOKEN }}
         path: wr64-secret
+        ref: main
 
     - name: Debug baserom access
       run: |
