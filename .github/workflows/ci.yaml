@@ -41,14 +41,29 @@ jobs:
         token: ${{ secrets.WR64_TOKEN }}
         path: wr64-secret
 
-    - name: Debug baserom access
+    - name: Debug baserom
       run: |
         echo "WR64_REPO = ${{ secrets.WR64_REPO }}"
-        echo "WR64_TOKEN is set = $([ -n '${{ secrets.WR64_TOKEN }}' ] && echo yes || echo no)"
-        echo "=== wr64-secret contents ==="
+        echo "=== Contents of wr64-secret ==="
         ls -la wr64-secret/ 2>&1
         echo "=== Git info ==="
-        cd wr64-secret && git log --oneline -5 && git branch -a && pwd
+        cd wr64-secret && git log --oneline -5 && git branch -a
+        echo "=== File check ==="
+        ls -la wr64-secret/baserom.us.z64 2>&1 || echo "NOT FOUND via checkout"
+
+    - name: Get the baserom (fallback: direct download)
+      run: |
+        if [ -f wr64-secret/baserom.us.z64 ]; then
+          cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
+          echo "Got baserom from checkout"
+        else
+          echo "Checkout failed, trying direct download..."
+          curl -L -s -H "Authorization: token ${{ secrets.WR64_TOKEN }}" \
+            "https://github.com/${{ secrets.WR64_REPO }}/raw/main/baserom.us.z64" \
+            -o baserom.us.rev1.z64
+          echo "Downloaded baserom via API"
+        fi
+        ls -la ./baserom.us.rev1.z64
 
     - name: Get the baserom
       run: cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
