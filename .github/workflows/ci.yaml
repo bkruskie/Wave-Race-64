@@ -41,8 +41,14 @@ jobs:
         token: ${{ secrets.WR64_TOKEN }}
         path: wr64-secret
 
+    - name: Debug baserom
+      run: |
+        echo "Contents of wr64-secret:"
+        ls -la wr64-secret/
+        file wr64-secret/baserom.us.z64 2>/dev/null || echo "File not found"
+
     - name: Get the baserom
-      run: cp -r wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
+      run: cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
 
     - name: Extract
       run: make extract
