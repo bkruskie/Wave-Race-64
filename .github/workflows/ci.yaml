@@ -34,39 +34,39 @@ jobs:
     - name: Build Dependencies
       run: make dependencies
 
-    - name: Get extra dependencies
-      uses: actions/checkout@v4
-      with:
-        repository: ${{ secrets.WR64_REPO }}
-        token: ${{ secrets.WR64_TOKEN }}
-        path: wr64-secret
-
-    - name: Debug baserom
+    - name: Debug - Check secrets
       run: |
-        echo "WR64_REPO = ${{ secrets.WR64_REPO }}"
-        echo "=== Contents of wr64-secret ==="
-        ls -la wr64-secret/ 2>&1
-        echo "=== Git info ==="
-        cd wr64-secret && git log --oneline -5 && git branch -a
-        echo "=== File check ==="
-        ls -la wr64-secret/baserom.us.z64 2>&1 || echo "NOT FOUND via checkout"
-
-    - name: Get the baserom (fallback: direct download)
-      run: |
-        if [ -f wr64-secret/baserom.us.z64 ]; then
-          cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
-          echo "Got baserom from checkout"
-        else
-          echo "Checkout failed, trying direct download..."
-          curl -L -s -H "Authorization: token ${{ secrets.WR64_TOKEN }}" \
-            "https://github.com/${{ secrets.WR64_REPO }}/raw/main/baserom.us.z64" \
-            -o baserom.us.rev1.z64
-          echo "Downloaded baserom via API"
-        fi
-        ls -la ./baserom.us.rev1.z64
+        echo "WR64_REPO = [${{ secrets.WR64_REPO }}]"
+        echo "WR64_TOKEN = ${SECRET_LEN_1:-${{ secrets.WR64_TOKEN | default: "" }}}"
+        if [ -n "${{ secrets.WR64_TOKEN }}" ]; then echo "WR64_TOKEN is set (len: $(echo -n "${{ secrets.WR64_TOKEN }}" | wc -c))"; else echo "WR64_TOKEN is NOT set"; fi
+        if [ -n "${{ secrets.SECRET_REPO }}" ]; then echo "SECRET_REPO is set"; else echo "SECRET_REPO is NOT set"; fi
+        if [ -n "${{ secrets.SECRET_TOKEN }}" ]; then echo "SECRET_TOKEN is set"; else echo "SECRET_TOKEN is NOT set"; fi
+        if [ -n "${{ secrets.SECRET_PASSPHRASE }}" ]; then echo "SECRET_PASSPHRASE is set"; else echo "SECRET_PASSPHRASE is NOT set"; fi
 
     - name: Get the baserom
-      run: cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
+      run: |
+        # Try WR64_* secrets first, then fall back to LLONSIT_* secrets
+        REPO=${{ secrets.WR64_REPO }}
+        TOKEN=${{ secrets.WR64_TOKEN }}
+        if [ -z "$REPO" ] && [ -n "${{ secrets.SECRET_REPO }}" ]; then
+          REPO=${{ secrets.SECRET_REPO }}
+        fi
+        if [ -z "$TOKEN" ] && [ -n "${{ secrets.SECRET_TOKEN }}" ]; then
+          TOKEN=${{ secrets.SECRET_TOKEN }}
+        fi
+        if [ -z "$REPO" ] || [ -z "$TOKEN" ]; then
+          echo "ERROR: Missing REPO or TOKEN secrets"
+          echo "REPO is empty: $([ -z "$REPO" ] && echo yes || echo no)"
+          echo "TOKEN is empty: $([ -z "$TOKEN" ] && echo yes || echo no)"
+          exit 1
+        fi
+        echo "Cloning baserom repo: $REPO"
+        git clone --depth=1 https://x-access-token:$TOKEN@github.com/$REPO.git wr64-secret
+        echo "=== Contents of wr64-secret ==="
+        ls -la wr64-secret/
+        echo "=== Copying baserom ==="
+        cp -f wr64-secret/baserom.us.z64 ./baserom.us.rev1.z64
+        ls -la ./baserom.us.rev1.z64
 
     - name: Extract
       run: make extract
