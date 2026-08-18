@@ -335,10 +335,24 @@ typedef struct UnkStruct_D_802C6E80 {
 } UnkStruct_D_802C6E80; // size = 0x10
 
 typedef struct UnkStruct_8009A04C {
-    /* 0x00 */ s32 unk_0;
-    /* 0x04 */ char pad4[0x8C]; /* maybe part of unk_0[0x24]? */
-    /* 0x90 */ f32 unk90;       /* inferred */
-    /* 0x94 */ char pad94[4];
+    /* 0x00 */ f32 unk_0;
+    /* 0x04 */ f32 unk4; /* inferred */
+    /* 0x08 */ f32 unk8; /* inferred */
+    /* 0x0C */ Vec3f unkC;
+    /* 0x18 */ f32 unk18;
+    /* 0x1C */ u8 unk1C;
+    /* 0x1D */ char pad1D[3]; /* maybe part of unk1C[4]? */
+    /* 0x20 */ Vec3f unk20;
+    /* 0x2C */ Vec3f unk2C;
+    /* 0x38 */ Vec3f unk38;
+    /* 0x44 */ Vec3f unk44;
+    /* 0x50 */ Vec3f unk50;
+    /* 0x5C */ Vec3f unk5C;
+    /* 0x68 */ Vec3f unk68;
+    /* 0x74 */ char pad74[0x1C]; /* maybe part of unk68[3]? */
+    /* 0x90 */ f32 unk90;
+    /* 0x94 */ s8 unk94;
+    /* 0x95 */ char pad95[3]; /* maybe part of unk94[4]? */
 } UnkStruct_8009A04C; /* size = 0x98 */
 
 typedef struct {
